@@ -12,6 +12,11 @@ ENV GO111MODULE=on
 WORKDIR /go/src/github.com/hgsgtk/health-endpoint/src
 COPY . /go/src/github.com/hgsgtk/health-endpoint/src
 
+# module cache
+# See also https://container-solutions.com/faster-builds-in-docker-with-go-1-11/
+COPY go.mod .
+COPY go.sum .
+
 RUN go mod download
 
 RUN go build -o server
