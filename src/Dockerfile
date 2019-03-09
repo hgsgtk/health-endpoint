@@ -5,8 +5,6 @@ RUN apk add --no-cache bash \
     curl \
     git
 
-ENV GOPATH /go
-ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 ENV GO111MODULE=on
 
 WORKDIR /go/src/github.com/hgsgtk/health-endpoint/src
@@ -25,4 +23,4 @@ FROM alpine
 
 COPY --from=builder /go/src/github.com/hgsgtk/health-endpoint/src/server .
 
-CMD ["./server"]
+ENTRYPOINT ["./server"]
