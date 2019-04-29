@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"net/http/pprof"
+	_ "net/http/pprof"
 )
 
 func Serve() {
@@ -19,7 +19,7 @@ func Serve() {
 	//http.HandleFunc("/debug/pprof/profile", pprof.Profile)
 	//http.HandleFunc("/debug/pprof/symbol", pprof.Symbol)
 	//
-	http.Handle("/debug/pprof/goroutine", pprof.Handler("goroutine"))
+	//http.Handle("/debug/pprof/goroutine", pprof.Handler("goroutine"))
 	//http.Handle("/debug/pprof/heap", pprof.Handler("heap"))
 	//http.Handle("/debug/pprof/threadcreate", pprof.Handler("threadcreate"))
 	//http.Handle("/debug/pprof/block", pprof.Handler("block"))
