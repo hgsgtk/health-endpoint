@@ -22,10 +22,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: healthy
-      MYSQL_USER: dbuser
+      MYSQL_USER: wruser
       MYSQL_PASSWORD: password
     volumes:
       - ./docker/db/data:/var/lib/mysql:cached
+      - ./docker/db/conf.d:/etc/mysql/conf.d:cached
 
   redis:
     image: redis
