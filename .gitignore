@@ -13,3 +13,6 @@
 
 # Editor
 .idea
+
+# docker database local mount files
+docker/db/data
